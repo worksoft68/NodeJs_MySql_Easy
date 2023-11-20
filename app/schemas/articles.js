@@ -1,0 +1,30 @@
+let schemas = {
+	table: 'articles',
+	primaryKeyColumn: 'id',
+	id: 'int',
+	categorie_id: 'int',
+	company_id: 'int',
+	title: 'string',
+	slug: 'string',
+	thumb: 'string',
+	summary: 'string',
+	content_articles: 'string',
+	ordering: 'int',
+	is_special: 'byte',
+	status: 'string',
+	user_id_approved: 'int',
+	username_approved: 'string',
+	datetime_approved: 'DateTime',
+	user_id_created: 'int',
+	user_name_created: 'string',
+	datetime_created: 'DateTime',
+	user_id_modified: 'int',
+	user_name_modified: 'string',
+	datetime_modified: 'DateTime',
+	count_view: 'int',
+	count_like: 'int',
+	count_dislike: 'int',
+};
+module.exports = {
+	schemas
+};

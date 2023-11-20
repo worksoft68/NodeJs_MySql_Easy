@@ -1,0 +1,588 @@
+<!--**************************************************************************************************************************
+			   This file cannot be used directly. You copy and paste this source to where you need it if needed 
+			   After you have copied the source code, you can delete this file
+		**************************************************************************************************************************-->
+
+<!--  sys_role_permissions  ===================================================================== -->
+<div class="card card-info card-outline collapsed-card">
+	<div class="card-header">
+		<h6 class="card-title">Management sys_role_permissions</h6>
+		<div class="card-tools">
+			<button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+				title="Collapse">
+				<i class="fas fa-plus"></i>
+			</button>
+		</div>
+	</div>
+	<div class="card-body" style="display: none; ">
+		<div class="row justify-content-between">
+			<label id="labid" class="col-sm-2 col-form-label text-sm-right required">Id Permissions</label>
+			<div class="col-xs-4 col-sm-4">
+				<input type="number" readonly name="id" id="id" value="<%= item.id %>"
+					class="form-control form-control-sm">
+			</div>
+			<label id="labfunctions" class="col-sm-2 col-form-label text-sm-right required">Function</label>
+			<div class="col-xs-4 col-sm-4">
+				<div class="dropdown">
+					<div id="divDropdowndescription" class="dropdown-content">
+						<input type="text" id="description" name="description" onkeyup="filterSelectBox('description')"
+							onfocus="focusDropdown('description')" onblur="blurDropdown('description')"
+							class="form-control form-control-sm">
+						<input id="functions" name="functions" type="hidden">
+						<div id="DivContendescription" class="Divdropdown-content">
+						</div>
+					</div>
+				</div>
+			</div>
+			<label id="labfullauthority" class="col-sm-2 col-form-label text-sm-right ">Full Authority</label>
+			<div class="col-xs-4 col-sm-4">
+				<input type="checkbox" name="fullauthority" id="fullauthority" class="form-control form-control-sm">
+			</div>
+			<label id="labaddnew" class="col-sm-2 col-form-label text-sm-right ">Add New</label>
+			<div class="col-xs-4 col-sm-4">
+				<input type="checkbox" name="addnew" id="addnew" class="form-control form-control-sm">
+			</div>
+			<label id="labupdates" class="col-sm-2 col-form-label text-sm-right ">Updates</label>
+			<div class="col-xs-4 col-sm-4">
+				<input type="checkbox" name="updates" id="updates" class="form-control form-control-sm">
+			</div>
+			<label id="labreadonly" class="col-sm-2 col-form-label text-sm-right ">Read Only</label>
+			<div class="col-xs-4 col-sm-4">
+				<input type="checkbox" name="readonly" id="readonly" class="form-control form-control-sm">
+			</div>
+			<label id="labfull_of_yourself" class="col-sm-2 col-form-label text-sm-right ">Full Of Yourself</label>
+			<div class="col-xs-4 col-sm-4">
+				<input type="checkbox" name="full_of_yourself" id="full_of_yourself"
+					class="form-control form-control-sm">
+			</div>
+			<label id="labpermission1" class="col-sm-2 col-form-label text-sm-right ">Permission 1</label>
+			<div class="col-xs-4 col-sm-4">
+				<input type="checkbox" name="permission1" id="permission1" class="form-control form-control-sm">
+			</div>
+			<label id="labpermission2" class="col-sm-2 col-form-label text-sm-right ">Permission 2</label>
+			<div class="col-xs-4 col-sm-4">
+				<input type="checkbox" name="permission2" id="permission2" class="form-control form-control-sm">
+			</div>
+			<label id="labpermission3" class="col-sm-2 col-form-label text-sm-right ">Permission 3</label>
+			<div class="col-xs-4 col-sm-4">
+				<input type="checkbox" name="permission3" id="permission3" class="form-control form-control-sm">
+			</div>
+			<label id="labpermission4" class="col-sm-2 col-form-label text-sm-right ">Permission 4</label>
+			<div class="col-xs-4 col-sm-4">
+				<input type="checkbox" name="permission4" id="permission4" class="form-control form-control-sm">
+			</div>
+			<label id="labpermission5" class="col-sm-2 col-form-label text-sm-right ">Permission 5</label>
+			<div class="col-xs-4 col-sm-4">
+				<input type="checkbox" name="permission5" id="permission5" class="form-control form-control-sm">
+			</div>
+			<label id="labpermission6" class="col-sm-2 col-form-label text-sm-right ">Permission 6</label>
+			<div class="col-xs-4 col-sm-4">
+				<input type="checkbox" name="permission6" id="permission6" class="form-control form-control-sm">
+			</div>
+			<label id="labpermission7" class="col-sm-2 col-form-label text-sm-right ">Permission 7</label>
+			<div class="col-xs-4 col-sm-4">
+			</div>
+			<label id="labpermission8" class="col-sm-2 col-form-label text-sm-right ">Permission 8</label>
+			<div class="col-xs-4 col-sm-4">
+				<input type="checkbox" name="permission8" id="permission8" class="form-control form-control-sm">
+			</div>
+			<label id="labpermission9" class="col-sm-2 col-form-label text-sm-right ">Permission 9</label>
+			<div class="col-xs-4 col-sm-4">
+				<input type="checkbox" name="permission9" id="permission9" class="form-control form-control-sm">
+			</div>
+			<label id="labpermission10" class="col-sm-2 col-form-label text-sm-right ">Permission 10</label>
+			<div class="col-xs-4 col-sm-4">
+				<input type="checkbox" name="permission10" id="permission10" class="form-control form-control-sm">
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-xs-2 col-sm-2"></div>
+			<div class="col-xs-10 col-sm-10">
+				<input type="button" id="btnSavesys_role_permissions" class="btn-sm btn-success" value="Save">
+				&nbsp; <input type="button" id="btnUpdatesys_role_permissions" class="btn-sm btn-primary"
+					value="Update">
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="text-success" id="divMessagesys_role_permissions"></div>
+		</div>
+		<input name="idsys_role_permissionsHidden" id="idsys_role_permissionsHidden" type="hidden">
+		<div>
+			<div class="DivWide2">
+				<table id="tablesys_role_permissions" class="table table-bordered table-hover btn-table mb-0">
+					<thead>
+						<tr>
+							<th class="text-center">Action</a></th>
+							<th class="text-center"><label id="labid_tb">Id Permissions</label></a></th>
+							<th class="text-center"><label id="labfunctions_tb">Function</label></a></th>
+							<th class="text-center"><label id="labfullauthority_tb">Full Authority</label></a></th>
+							<th class="text-center"><label id="labaddnew_tb">Add New</label></a></th>
+							<th class="text-center"><label id="labupdates_tb">Updates</label></a></th>
+							<th class="text-center"><label id="labreadonly_tb">Read Only</label></a></th>
+							<th class="text-center"><label id="labfull_of_yourself_tb">Full Of Yourself</label></a></th>
+							<th class="text-center"><label id="labpermission1_tb">Permission 1</label></a></th>
+							<th class="text-center"><label id="labpermission2_tb">Permission 2</label></a></th>
+							<th class="text-center"><label id="labpermission3_tb">Permission 3</label></a></th>
+							<th class="text-center"><label id="labpermission4_tb">Permission 4</label></a></th>
+							<th class="text-center"><label id="labpermission5_tb">Permission 5</label></a></th>
+							<th class="text-center"><label id="labpermission6_tb">Permission 6</label></a></th>
+							<th class="text-center"><label id="labpermission7_tb">Permission 7</label></a></th>
+							<th class="text-center"><label id="labpermission8_tb">Permission 8</label></a></th>
+							<th class="text-center"><label id="labpermission9_tb">Permission 9</label></a></th>
+							<th class="text-center"><label id="labpermission10_tb">Permission 10</label></a></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="text-center"></a></th>
+							<th class="text-center"></a></th>
+							<th class="text-center"></a></th>
+							<th class="text-center"></a></th>
+							<th class="text-center"></a></th>
+							<th class="text-center"></a></th>
+							<th class="text-center"></a></th>
+							<th class="text-center"></a></th>
+							<th class="text-center"></a></th>
+							<th class="text-center"></a></th>
+							<th class="text-center"></a></th>
+							<th class="text-center"></a></th>
+							<th class="text-center"></a></th>
+							<th class="text-center"></a></th>
+							<th class="text-center"></a></th>
+							<th class="text-center"></a></th>
+							<th class="text-center"></a></th>
+							<th class="text-center"></a></th>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end  sys_role_permissions ===================================================================== -->
+
+<script type="application/javascript">
+
+	function displayDataToTablesys_role_permissions(datas) {
+		var table=document.getElementById("tablesys_role_permissions");
+		var lengthtable=table.rows.length-1;
+		for(var n=lengthtable;n>0;n--) {
+			table.deleteRow(n);
+		}
+		var length=datas.length;
+		if(length<1) {
+			showNoticeDanger(language.Message_NotFoundData);
+			return false;
+		}
+		datas.forEach(function(data) {
+			var row=table.insertRow(1);
+			var cell0=row.insertCell(0);
+			var cell1=row.insertCell(1);
+			var cell2=row.insertCell(2);
+			var cell3=row.insertCell(3);
+			var cell4=row.insertCell(4);
+			var cell5=row.insertCell(5);
+			var cell6=row.insertCell(6);
+			var cell7=row.insertCell(7);
+			var cell8=row.insertCell(8);
+			var cell9=row.insertCell(9);
+			var cell10=row.insertCell(10);
+			var cell11=row.insertCell(11);
+			var cell12=row.insertCell(12);
+			var cell13=row.insertCell(13);
+			var cell14=row.insertCell(14);
+			var cell15=row.insertCell(15);
+			var cell16=row.insertCell(16);
+			var cell17=row.insertCell(17);
+			var cell18=row.insertCell(18);
+			let strbutton=" <a  onclick=\"getByIdsys_role_permissions('"+data.id+"')\" type=\"button\" class=\"rounded-circle btn btn-sm btn-info\" title=\"Edit\">"+
+				"<i class=\"fas fa-pencil-alt\"></i>"+
+				"</a> "+
+				" <button type=\"button\" class=\"rounded-circle btn btn-sm btn-danger\" data-idsys_role_permissions =\""+data.id+"\" title=\"Delete\"  onclick=\"deleteByIdsys_role_permissions(this,'"+data.id+"')\">";
+			strbutton+=" <i class=\"fas fa-trash-alt\"></i> ";
+			strbutton+=" </ button > ";
+			cell0.innerHTML=strbutton;
+			cell1.innerHTML=data.id;
+			cell2.innerHTML=data.description;
+			cell3.innerHTML=data.fullauthority;
+			cell4.innerHTML=data.addnew;
+			cell5.innerHTML=data.updates;
+			cell6.innerHTML=data.readonly;
+			cell7.innerHTML=data.full_of_yourself;
+			cell8.innerHTML=data.permission1;
+			cell9.innerHTML=data.permission2;
+			cell10.innerHTML=data.permission3;
+			cell11.innerHTML=data.permission4;
+			cell12.innerHTML=data.permission5;
+			cell13.innerHTML=data.permission6;
+			cell14.innerHTML=data.permission7;
+			cell15.innerHTML=data.permission8;
+			cell16.innerHTML=data.permission9;
+			cell17.innerHTML=data.permission10;
+		});
+	}
+
+	createDataForDropdownListssys_role_permissions();
+	function createDataForDropdownListssys_role_permissions() {
+		var strCatalogue=$('#listDataCatalogue').val();
+		arrCatalogue=JSON.parse(strCatalogue);
+		createDataForDropdown(arrCatalogue[0],'functions','function_name','description','description','-- Chose --');
+	}
+
+	closeAllDropdownsys_role_permissions();
+	function closeAllDropdownsys_role_permissions() {
+		var DivContendescription=document.getElementById('DivContendescription');
+		DivContendescription.hidden=true;
+
+	}
+
+	function getByIdsys_role_permissions(Id) {
+		var link=$('#linkPrefix').val()+'getByIdsys_role_permissions/'+Id;
+		$.ajax({
+			type: 'GET',
+			url: link,
+			dataType: "json",
+			success: function(resultdata) {
+				var success=resultdata.success;
+				if(success==true) {
+					showDataToFormsys_role_permissions(resultdata.data);
+				}
+			},
+			failure: function(response) {
+				alert(language.Message_GetItemByIdError);
+			},
+			error: function(response) {
+				alert(language.Message_GetItemByIdError);
+			},
+		});
+	}
+
+	function showDataToFormsys_role_permissions(data) {
+		try {
+			$('#btnUpdatesys_role_permissions').prop('hidden',false);
+			$('#idsys_role_permissionsHidden').val(data.id);
+			$('#id').val(data.id);
+			$('#functions').val(data.functions);
+			$('#description').val(data.description);
+			if((data.fullauthority=="true")||(data.fullauthority==true)||(data.fullauthority=="active")||(data.fullauthority=="yes")||(data.fullauthority=="1"))
+				$("#fullauthority").prop("checked",true);
+			else $("#fullauthority").prop("checked",false);
+			if((data.addnew=="true")||(data.addnew==true)||(data.addnew=="active")||(data.addnew=="yes")||(data.addnew=="1"))
+				$("#addnew").prop("checked",true);
+			else $("#addnew").prop("checked",false);
+			if((data.updates=="true")||(data.updates==true)||(data.updates=="active")||(data.updates=="yes")||(data.updates=="1"))
+				$("#updates").prop("checked",true);
+			else $("#updates").prop("checked",false);
+			if((data.readonly=="true")||(data.readonly==true)||(data.readonly=="active")||(data.readonly=="yes")||(data.readonly=="1"))
+				$("#readonly").prop("checked",true);
+			else $("#readonly").prop("checked",false);
+			if((data.full_of_yourself=="true")||(data.full_of_yourself==true)||(data.full_of_yourself=="active")||(data.full_of_yourself=="yes")||(data.full_of_yourself=="1"))
+				$("#full_of_yourself").prop("checked",true);
+			else $("#full_of_yourself").prop("checked",false);
+			if((data.permission1=="true")||(data.permission1==true)||(data.permission1=="active")||(data.permission1=="yes")||(data.permission1=="1"))
+				$("#permission1").prop("checked",true);
+			else $("#permission1").prop("checked",false);
+			if((data.permission2=="true")||(data.permission2==true)||(data.permission2=="active")||(data.permission2=="yes")||(data.permission2=="1"))
+				$("#permission2").prop("checked",true);
+			else $("#permission2").prop("checked",false);
+			if((data.permission3=="true")||(data.permission3==true)||(data.permission3=="active")||(data.permission3=="yes")||(data.permission3=="1"))
+				$("#permission3").prop("checked",true);
+			else $("#permission3").prop("checked",false);
+			if((data.permission4=="true")||(data.permission4==true)||(data.permission4=="active")||(data.permission4=="yes")||(data.permission4=="1"))
+				$("#permission4").prop("checked",true);
+			else $("#permission4").prop("checked",false);
+			if((data.permission5=="true")||(data.permission5==true)||(data.permission5=="active")||(data.permission5=="yes")||(data.permission5=="1"))
+				$("#permission5").prop("checked",true);
+			else $("#permission5").prop("checked",false);
+			if((data.permission6=="true")||(data.permission6==true)||(data.permission6=="active")||(data.permission6=="yes")||(data.permission6=="1"))
+				$("#permission6").prop("checked",true);
+			else $("#permission6").prop("checked",false);
+			$('#permission7').val(data.permission7);
+			if((data.permission8=="true")||(data.permission8==true)||(data.permission8=="active")||(data.permission8=="yes")||(data.permission8=="1"))
+				$("#permission8").prop("checked",true);
+			else $("#permission8").prop("checked",false);
+			if((data.permission9=="true")||(data.permission9==true)||(data.permission9=="active")||(data.permission9=="yes")||(data.permission9=="1"))
+				$("#permission9").prop("checked",true);
+			else $("#permission9").prop("checked",false);
+			if((data.permission10=="true")||(data.permission10==true)||(data.permission10=="active")||(data.permission10=="yes")||(data.permission10=="1"))
+				$("#permission10").prop("checked",true);
+			else $("#permission10").prop("checked",false);
+		}
+		catch(error) {}
+	}
+
+	function clearFormsys_role_permissions() {
+		try {
+			$('#idsys_role_permissionsHidden').val('');
+			$('#id').val('');
+			$('#functions').val('');
+			$('#description').val('');
+			$("#fullauthority").prop("checked",false);
+			$("#addnew").prop("checked",false);
+			$("#updates").prop("checked",false);
+			$("#readonly").prop("checked",false);
+			$("#full_of_yourself").prop("checked",false);
+			$("#permission1").prop("checked",false);
+			$("#permission2").prop("checked",false);
+			$("#permission3").prop("checked",false);
+			$("#permission4").prop("checked",false);
+			$("#permission5").prop("checked",false);
+			$("#permission6").prop("checked",false);
+			$('#permission7').val('');
+			$("#permission8").prop("checked",false);
+			$("#permission9").prop("checked",false);
+			$("#permission10").prop("checked",false);
+		}
+		catch(error) {}
+	}
+
+	$('#btnSavesys_role_permissions').click(function() {
+		$(this).prop('disabled',true);
+		saveInsertsys_role_permissions();
+		$(this).prop('disabled',false);
+	});
+
+	function getDataFormsys_role_permissions() {
+		if(($('#role_id').val()<1)||($('#role_id').val()>4294967295)) {
+			var message=formatMessage(language.role_id+": "+language.Message_Invalid_role_id,'1','4294967295');
+			alert(message);
+			return false;
+		}
+		if(($('#functions').val().length<1)||($('#functions').val().length>50)) {
+			var message=formatMessage(language.functions+": "+language.Message_Invalid_functions,'1','50');
+			alert(message);
+			return false;
+		}
+		return {
+			'idHidden': $('#idHidden').val(),
+			'id': $('#id').val(),
+			'role_id': $('#').val(),
+			'functions': $('#functions').val(),
+			'fullauthority': $('#fullauthority').is(":checked"),
+			'addnew': $('#addnew').is(":checked"),
+			'updates': $('#updates').is(":checked"),
+			'readonly': $('#readonly').is(":checked"),
+			'full_of_yourself': $('#full_of_yourself').is(":checked"),
+			'permission1': $('#permission1').is(":checked"),
+			'permission2': $('#permission2').is(":checked"),
+			'permission3': $('#permission3').is(":checked"),
+			'permission4': $('#permission4').is(":checked"),
+			'permission5': $('#permission5').is(":checked"),
+			'permission6': $('#permission6').is(":checked"),
+			'permission7': $('#permission7').val(),
+			'permission8': $('#permission8').is(":checked"),
+			'permission9': $('#permission9').is(":checked"),
+			'permission10': $('#permission10').is(":checked"),
+		}
+	}
+
+	function saveInsertsys_role_permissions() {
+		let data=getDataFormsys_role_permissions();
+		if(data==false) {
+			$('#btnSave').prop('disabled',false);
+			return false;
+		}
+		var link=$('#linkPrefix').val()+'savesys_role_permissions';
+		$.ajax({
+			type: 'post',
+			url: link,
+			data: data,
+			dataType: "json",
+			success: function(response) {
+				var success=response.success;
+				var result=response.data;
+				if((success=='false')||(success==false))
+					showNoticeDanger(language.Message_AddNewError+' ('+response.message+')');
+				else if((success!=true)&&(success!='true'))
+					showNoticeDanger(result.message);
+				else {
+					insertRowsys_role_permissions(result.data);
+					clearFormsys_role_permissions();
+				}
+			},
+			failure: function(response) {
+				showErrorMessageSave(response,language.Message_AddNewError);
+			},
+			error: function(response) {
+				showErrorMessageSave(response,language.Message_AddNewError);
+			},
+		});
+		$('#btnSave').prop('disabled',false);
+	}
+
+	function insertRowsys_role_permissions(data) {
+		showNoticeSuccess(language.Message_AddNewSuccess);
+		var table=document.getElementById("tablesys_role_permissions");
+		var row=table.insertRow(1);
+		var cell0=row.insertCell(0);
+		var cell1=row.insertCell(1);
+		var cell2=row.insertCell(2);
+		var cell3=row.insertCell(3);
+		var cell4=row.insertCell(4);
+		var cell5=row.insertCell(5);
+		var cell6=row.insertCell(6);
+		var cell7=row.insertCell(7);
+		var cell8=row.insertCell(8);
+		var cell9=row.insertCell(9);
+		var cell10=row.insertCell(10);
+		var cell11=row.insertCell(11);
+		var cell12=row.insertCell(12);
+		var cell13=row.insertCell(13);
+		var cell14=row.insertCell(14);
+		var cell15=row.insertCell(15);
+		var cell16=row.insertCell(16);
+		var cell17=row.insertCell(17);
+		var cell18=row.insertCell(18);
+		let strbutton=" <a  onclick=\"getByIdsys_role_permissions('"+data.id+"')\" type=\"button\" class=\"rounded-circle btn btn-sm btn-info\" title=\"Edit\">"+
+			"<i class=\"fas fa-pencil-alt\"></i>"+
+			"</a> "+
+			" <button type=\"button\" class=\"rounded-circle btn btn-sm btn-danger\" data-idsys_role_permissions =\""+data.id+"\" title=\"Delete\"  onclick=\"deleteByIdsys_role_permissions(this,"+data.id+")\">";
+		strbutton+=" <i class=\"fas fa-trash-alt\"></i> ";
+		strbutton+=" </ button > ";
+		cell0.innerHTML=strbutton;
+		cell1.innerHTML=data.id;
+		if(data.functions==$('#functions').val()) {
+			cell2.innerHTML=$('#description').val();
+		}
+		cell3.innerHTML=data.fullauthority;
+		cell4.innerHTML=data.addnew;
+		cell5.innerHTML=data.updates;
+		cell6.innerHTML=data.readonly;
+		cell7.innerHTML=data.full_of_yourself;
+		cell8.innerHTML=data.permission1;
+		cell9.innerHTML=data.permission2;
+		cell10.innerHTML=data.permission3;
+		cell11.innerHTML=data.permission4;
+		cell12.innerHTML=data.permission5;
+		cell13.innerHTML=data.permission6;
+		cell14.innerHTML=data.permission7;
+		cell15.innerHTML=data.permission8;
+		cell16.innerHTML=data.permission9;
+		cell17.innerHTML=data.permission10;
+	}
+
+	$('#btnUpdatesys_role_permissions').click(function() {
+		$(this).prop('disabled',true);
+		saveUpdatesys_role_permissions();
+		$(this).prop('disabled',false);
+	});
+
+	function saveUpdatesys_role_permissions() {
+		let data=getDataFormsys_role_permissions();
+		if(data==false) {
+			$('#btnUpdatesys_role_permissions').prop('disabled',false);
+			return false;
+		}
+		if(data.idsys_role_permissionsHidden=="") {
+			$('#btnUpdatesys_role_permissions').prop('disabled',false);
+			showNoticeDanger(language.Message_HaveNotSelectedItemUpdate);
+			return false;
+		}
+		var link=$('#linkPrefix').val()+'updatesys_role_permissions';
+		$.ajax({
+			type: 'put',
+			url: link,
+			data: data,
+			dataType: "json",
+			success: function(response) {
+				var success=response.success;
+				var result=response.data;
+				if((success=='false')||(success==false)) {
+					showNoticeDanger(language.Message_UpdateError);
+					return false;
+				}
+				else if((success!=true)&&(success!='true')) {
+					showNoticeDanger(result.message);
+					return false;
+				}
+				else {
+					updateRowsys_role_permissions(result.data);
+					clearFormsys_role_permissions();
+				}
+			},
+			failure: function(response) {
+				showErrorMessageSave(response,language.Message_UpdateError);
+			},
+			error: function(response) {
+				showErrorMessageSave(response,language.Message_UpdateError);
+			}
+		});
+		$('#btnUpdatesys_role_permissions').prop('disabled',false);
+	}
+
+	function updateRowsys_role_permissions(data) {
+		showNoticeSuccess(language.Message_UpdateSuccess);
+		var row=$("#tablesys_role_permissions button[data-idsys_role_permissions = '"+data.id+"']").parents("tr")[0];
+		var tr="<tr>"+
+			"<td class=\"text-center\">"+
+			" <a  onclick=\"getByIdsys_role_permissions('"+data.id+"')\" type=\"button\" class=\"rounded-circle btn btn-sm btn-info\" title=\"Edit\">"+
+			" <i class=\"fas fa-pencil-alt\"></i>"+
+			" </a>"+
+			" <button type=\"button\" class=\"rounded-circle btn btn-sm btn-danger\" data-idsys_role_permissions =\""+data.id+"\" title=\"Delete\"  onclick=\"deleteById(this,'"+data.id+"')\">"+
+			" <i class=\"fas fa-trash-alt\"></i> "+
+			" </button> "+
+			" </td>";
+		tr+="<td class=\"text-center\">"+data.id+"</td>";
+		if(data.functions==$('#functions').val()) {
+			tr+="<td class=\"text-center\">"+$('#description').val()+"</td>";
+		}
+		tr+="<td class=\"text-center\">"+data.fullauthority+"</td>";
+		tr+="<td class=\"text-center\">"+data.addnew+"</td>";
+		tr+="<td class=\"text-center\">"+data.updates+"</td>";
+		tr+="<td class=\"text-center\">"+data.readonly+"</td>";
+		tr+="<td class=\"text-center\">"+data.full_of_yourself+"</td>";
+		tr+="<td class=\"text-center\">"+data.permission1+"</td>";
+		tr+="<td class=\"text-center\">"+data.permission2+"</td>";
+		tr+="<td class=\"text-center\">"+data.permission3+"</td>";
+		tr+="<td class=\"text-center\">"+data.permission4+"</td>";
+		tr+="<td class=\"text-center\">"+data.permission5+"</td>";
+		tr+="<td class=\"text-center\">"+data.permission6+"</td>";
+		tr+="<td class=\"text-center\">"+data.permission7+"</td>";
+		tr+="<td class=\"text-center\">"+data.permission8+"</td>";
+		tr+="<td class=\"text-center\">"+data.permission9+"</td>";
+		tr+="<td class=\"text-center\">"+data.permission10+"</td>";
+		"tr += </tr>";
+		$(row).after(tr);
+		$(row).remove();
+	}
+	function deleteByIdsys_role_permissions(row,IdObject) {
+		let message=language.Message_DoYouWantToDeleteById+' '+IdObject+'?';
+		var answer=confirm(message)
+		if(!answer) {return false;}
+		let data={
+			'id': IdObject
+		};
+		var link=$('#linkPrefix').val()+'deleteByIdsys_role_permissions';
+		$.ajax({
+			type: 'delete',
+			url: link,
+			data: data,
+			dataType: "json",
+			success: function(resultdata) {
+				var success=resultdata.success;
+				var message=resultdata.message;
+				var notice={};
+				if((success=='true')||(success==true)) {
+					showNoticeSuccess(language.Message_DeleteSuccess);
+					var i=row.parentNode.parentNode.rowIndex;
+					document.getElementById("tablesys_role_permissions").deleteRow(i);
+					return true;
+				}
+				else if(message.length>10) {
+					showNoticeDanger(message);
+					return false;
+				}
+				else {
+					showNoticeDanger(language.Message_DeleteFail);
+					return false;
+				}
+			},
+			failure: function(response) {
+				showNoticeDanger(language.Message_DeleteFail);
+			},
+			error: function(response) {
+				showNoticeDanger(language.Message_DeleteFail);
+			}
+		});
+	}
+</script>

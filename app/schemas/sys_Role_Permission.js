@@ -1,0 +1,31 @@
+let schemas = {
+	table: 'Sys_Role_Permission',
+	primaryKeyColumn: 'RolePermissionId',
+	RolePermissionId: 'int',
+	RoleId: 'int',
+	Functions: 'string',
+	FullAuthority: 'bool',
+	Addnew: 'bool',
+	Updates: 'bool',
+	ReadOnly: 'bool',
+	FullOfYourself: 'bool',
+	Permission1: 'bool',
+	Permission2: 'bool',
+	Permission3: 'bool',
+	Permission4: 'bool',
+	Permission5: 'bool',
+	Permission6: 'bool',
+	Permission7: 'bool',
+	Permission8: 'bool',
+	Permission9: 'bool',
+	Permission10: 'bool',
+	User_Id_Created: 'int',
+	User_Name_Created: 'string',
+	DateTime_Created: 'DateTime',
+	User_Id_Modified: 'int',
+	User_Name_Modified: 'string',
+	DateTime_Modified: 'DateTime',
+};
+module.exports = {
+	schemas
+};

@@ -1,0 +1,12 @@
+<% 
+    showCustomSettings = (key, settings) => { 
+    // console.log(key);
+        var myInfo = settings.find(function (setting) {
+            return setting.id == key;
+        });
+    // if(key=='Title Latest News'){
+    // console.log(myInfo);
+    // }
+    return (myInfo == undefined)?'':myInfo.value_setting;
+    } 
+%>

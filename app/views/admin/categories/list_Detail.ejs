@@ -1,0 +1,438 @@
+	<!--**************************************************************************************************************************
+			   This file cannot be used directly. You copy and paste this source to where you need it if needed 
+			   After you have copied the source code, you can delete this file
+		**************************************************************************************************************************-->
+
+	<!--  categories  ===================================================================== -->
+	<div class="card card-info card-outline collapsed-card">
+		<div class="card-header">
+			<h6 class="card-title">Management categories</h6>
+			<div class="card-tools">
+				<button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+					<i class="fas fa-plus"></i>
+				</button>
+			</div>
+		</div>
+		<div class="card-body" style="display: none; ">
+			<div class="row justify-content-between">
+					<label id="labid" class="col-sm-2 col-form-label text-sm-right ">Id</label>
+					<div class="col-xs-4 col-sm-4">
+						<input type="number" readonly name="id"  id="id" value="<%= item.id %>" class="form-control form-control-sm">
+					</div>
+					<label id="labparent_id" class="col-sm-2 col-form-label text-sm-right ">Parent Categories</label>
+					<div class="col-xs-4 col-sm-4">
+						<div class="dropdown">
+							<div id="divDropdown" class="dropdown-content">
+								<input type="text" id="" name="" onkeyup="filterSelectBox('')" onfocus="focusDropdown('')" onblur="blurDropdown('')" class="form-control form-control-sm">
+								<input  id="parent_id" name = "parent_id" type="hidden">
+								<div id="DivConten" class="Divdropdown-content">
+								</div>
+							</div>
+						 </div>
+					</div>
+					<label id="labname" class="col-sm-2 col-form-label text-sm-right required">Name</label>
+					<div class="col-xs-4 col-sm-4">
+						<input type="text"  name="name"  id="name"  value="<%= item.name %>" class="form-control form-control-sm">
+					</div>
+					<label id="labslug" class="col-sm-2 col-form-label text-sm-right ">Slug</label>
+					<div class="col-xs-4 col-sm-4">
+						<input type="text"  name="slug"  id="slug"  value="<%= item.slug %>" class="form-control form-control-sm">
+					</div>
+					<label id="labthumbnail" class="col-sm-2 col-form-label text-sm-right ">Thumbnail</label>
+					<div class="col-xs-4 col-sm-4">
+						<input type="file" name="thumbnail"  id="thumbnail"  class="form-control form-control-sm">
+					</div>
+					<label id="labviewtype" class="col-sm-2 col-form-label text-sm-right ">View Type</label>
+					<div class="col-xs-4 col-sm-4">
+					</div>
+					<label id="labis_show_homepage" class="col-sm-2 col-form-label text-sm-right ">Show Homepage</label>
+					<div class="col-xs-4 col-sm-4">
+						<input type="checkbox"  name="is_show_homepage"  id="is_show_homepage" class="form-control form-control-sm">
+					</div>
+					<label id="labordering" class="col-sm-2 col-form-label text-sm-right ">Ordering</label>
+					<div class="col-xs-4 col-sm-4">
+						<input type="number"  name="ordering"  id="ordering" value="<%= item.ordering %>" class="form-control form-control-sm">
+					</div>
+					<label id="labdescription" class="col-sm-2 col-form-label text-sm-right ">Description</label>
+					<div class="col-xs-4 col-sm-4">
+						<input type="text"  name="description"  id="description"  value="<%= item.description %>" class="form-control form-control-sm">
+					</div>
+					<label id="labstatus" class="col-sm-2 col-form-label text-sm-right ">Status</label>
+					<div class="col-xs-4 col-sm-4">
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-xs-2 col-sm-2"></div>
+					<div class="col-xs-10 col-sm-10">
+						<input type="button" id = "btnSavecategories" class="btn-sm btn-success" value="Save">
+						&nbsp; <input type="button" id = "btnUpdatecategories" class="btn-sm btn-primary" value="Update">
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class = "text-success" id = "divMessagecategories"></div>
+				</div>
+						<input name="idcategoriesHidden" id="idcategoriesHidden" type="hidden">
+			<div>
+				<div class="DivWide2">
+					<table id="tablecategories" class="table table-bordered table-hover btn-table mb-0">
+						<thead>
+							<tr>
+								<th class="text-center">Action</a></th>
+								<th class="text-center"><label id="labid_tb">Id</label></a></th>
+								<th class="text-center"><label id="labparent_id_tb">Parent Categories</label></a></th>
+								<th class="text-center"><label id="labname_tb">Name</label></a></th>
+								<th class="text-center"><label id="labslug_tb">Slug</label></a></th>
+								<th class="text-center"><label id="labthumbnail_tb">Thumbnail</label></a></th>
+								<th class="text-center"><label id="labviewtype_tb">View Type</label></a></th>
+								<th class="text-center"><label id="labis_show_homepage_tb">Show Homepage</label></a></th>
+								<th class="text-center"><label id="labordering_tb">Ordering</label></a></th>
+								<th class="text-center"><label id="labdescription_tb">Description</label></a></th>
+								<th class="text-center"><label id="labstatus_tb">Status</label></a></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th class="text-center"></a></th>
+								<th class="text-center"></a></th>
+								<th class="text-center"></a></th>
+								<th class="text-center"></a></th>
+								<th class="text-center"></a></th>
+								<th class="text-center"></a></th>
+								<th class="text-center"></a></th>
+								<th class="text-center"></a></th>
+								<th class="text-center"></a></th>
+								<th class="text-center"></a></th>
+								<th class="text-center"></a></th>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- end  categories ===================================================================== -->
+
+<script type="application/javascript">
+
+function displayDataToTablecategories(datas){
+	var table = document.getElementById("tablecategories");
+	var lengthtable= table.rows.length-1;
+	for(var n = lengthtable; n > 0; n--) {
+		table.deleteRow(n);
+	}
+	var length = datas.length;
+	if(length <1 ) {
+		showNoticeDanger(language.Message_NotFoundData);
+		return false;
+	}
+	datas.forEach(function(data) {
+		var row = table.insertRow(1);
+		var cell0 = row.insertCell(0);
+		var cell1 = row.insertCell(1);
+		var cell2 = row.insertCell(2);
+		var cell3 = row.insertCell(3);
+		var cell4 = row.insertCell(4);
+		var cell5 = row.insertCell(5);
+		var cell6 = row.insertCell(6);
+		var cell7 = row.insertCell(7);
+		var cell8 = row.insertCell(8);
+		var cell9 = row.insertCell(9);
+		var cell10 = row.insertCell(10);
+		var cell11 = row.insertCell(11);
+		let strbutton = " <a  onclick=\"getByIdcategories('"+data.id+"')\" type=\"button\" class=\"rounded-circle btn btn-sm btn-info\" title=\"Edit\">" +
+			"<i class=\"fas fa-pencil-alt\"></i>" + 
+			"</a> " + 
+			" <button type=\"button\" class=\"rounded-circle btn btn-sm btn-danger\" data-idcategories =\""+data.id+"\" title=\"Delete\"  onclick=\"deleteByIdcategories(this,'"+data.id+"')\">";
+			strbutton += " <i class=\"fas fa-trash-alt\"></i> ";
+		strbutton += " </ button > ";
+		cell0.innerHTML = strbutton;
+		cell1.innerHTML = data.id;
+		cell2.innerHTML = data.parent_id;
+		cell3.innerHTML = data.name;
+		cell4.innerHTML = data.slug;
+		cell5.innerHTML = data.thumbnail;
+		cell6.innerHTML = data.viewtype;
+		cell7.innerHTML = data.is_show_homepage;
+		cell8.innerHTML = data.ordering;
+		cell9.innerHTML = data.description;
+		cell10.innerHTML = data.status;
+	});
+}
+
+closeAllDropdowncategories();
+function closeAllDropdowncategories(){
+	var DivConten = document.getElementById('DivConten');
+	DivConten.hidden = true;
+
+}
+
+function getByIdcategories(Id){
+	var link = $('#linkPrefix').val() + 'getByIdcategories/'+Id;
+	$.ajax({
+		type: 'GET',
+		url: link,
+		dataType: "json",
+		success: function(resultdata){
+			var success = resultdata.success;
+			if(success == true){
+				showDataToFormcategories(resultdata.data);
+			}
+		},
+		failure: function (response) {
+			alert(language.Message_GetItemByIdError);
+		},
+		error: function (response) {
+			alert(language.Message_GetItemByIdError);
+		},
+	});
+}
+
+function showDataToFormcategories(data){
+	try{
+		$('#btnUpdatecategories').prop('hidden', false);
+		$('#idcategoriesHidden').val(data.id);
+		$('#id').val(data.id);
+		$('#parent_id').val(data.parent_id);
+		$('#name').val(data.name);
+		$('#slug').val(data.slug);
+		$('#thumbnail').val(data.thumbnail);
+		$('#viewtype').val(data.viewtype);
+		if((data.is_show_homepage == "true") || (data.is_show_homepage == true) || (data.is_show_homepage == "active")|| (data.is_show_homepage == "yes")|| (data.is_show_homepage == "1"))
+			$("#is_show_homepage").prop("checked", true);
+		else $("#is_show_homepage").prop("checked", false);
+		$('#ordering').val(data.ordering);
+		$('#description').val(data.description);
+		$('#status').val(data.status);
+	}
+	catch(error){}
+}
+
+function clearFormcategories(){
+	try{
+		$('#idcategoriesHidden').val('');
+		$('#id').val('');
+		$('#parent_id').val('');
+		$('#name').val('');
+		$('#slug').val('');
+		$('#thumbnail').val('');
+		$('#viewtype').val('');
+		$("#is_show_homepage").prop("checked", false);
+		$('#ordering').val('');
+		$('#description').val('');
+		$('#status').val('');
+	}
+	catch(error){}
+}
+
+$('#btnSavecategories').click(function(){
+	$(this).prop('disabled', true);
+	saveInsertcategories();
+	$(this).prop('disabled', false);
+});
+
+function getDataFormcategories(){
+	if(($('#name').val().length < 1) || ($('#name').val().length > 40)) {
+		var message = formatMessage(language.name + ": "+ language.Message_Invalid_name, '1','40');
+		alert(message);
+		return false;
+	}
+	return {
+		'idHidden' : $('#idHidden').val(),
+		'id' : $('#id').val(),
+		'parent_id' : $('#parent_id').val(),
+		'name' : $('#name').val(),
+		'slug' : $('#slug').val(),
+		'thumbnail' : $('#thumbnail').val(),
+		'viewtype' : $('#viewtype').val(),
+		'is_show_homepage' : $('#is_show_homepage').is (":checked"),
+		'ordering' : $('#ordering').val(),
+		'description' : $('#description').val(),
+		'status' : $('#status').val(),
+	}
+}
+
+function saveInsertcategories(){
+	let data = getDataFormcategories();
+	if(data == false) {
+		$('#btnSave').prop('disabled', false);
+		return false;
+	}
+	var link = $('#linkPrefix').val() + 'savecategories';
+	$.ajax({
+		type: 'post',
+		url: link,
+		data: data,
+		dataType: "json",
+		success: function(response){
+			var success = response.success;
+			var result 	= response.data;
+			if((success == 'false') || (success == false))
+				showNoticeDanger(language.Message_AddNewError + ' ('+response.message+')');
+			else if((success != true) && (success != 'true'))
+				showNoticeDanger(result.message);
+			else {
+				insertRowcategories(result.data);
+				clearFormcategories();
+			}
+		},
+		failure: function (response) {
+			showErrorMessageSave(response, language.Message_AddNewError);
+		},
+		error: function (response) {
+			showErrorMessageSave(response, language.Message_AddNewError);
+		},
+	});
+	$('#btnSave').prop('disabled', false);
+}
+
+function insertRowcategories(data){
+	showNoticeSuccess(language.Message_AddNewSuccess);
+	var table = document.getElementById("tablecategories");
+	var row = table.insertRow(1);
+	var cell0 = row.insertCell(0);
+	var cell1 = row.insertCell(1);
+	var cell2 = row.insertCell(2);
+	var cell3 = row.insertCell(3);
+	var cell4 = row.insertCell(4);
+	var cell5 = row.insertCell(5);
+	var cell6 = row.insertCell(6);
+	var cell7 = row.insertCell(7);
+	var cell8 = row.insertCell(8);
+	var cell9 = row.insertCell(9);
+	var cell10 = row.insertCell(10);
+	var cell11 = row.insertCell(11);
+	let strbutton = " <a  onclick=\"getByIdcategories('"+data.id+"')\" type=\"button\" class=\"rounded-circle btn btn-sm btn-info\" title=\"Edit\">" +
+		"<i class=\"fas fa-pencil-alt\"></i>" + 
+		"</a> " + 
+		" <button type=\"button\" class=\"rounded-circle btn btn-sm btn-danger\" data-idcategories =\""+data.id+"\" title=\"Delete\"  onclick=\"deleteByIdcategories(this,"+data.id+")\">";
+	strbutton += " <i class=\"fas fa-trash-alt\"></i> ";
+	strbutton += " </ button > ";
+	cell0.innerHTML = strbutton;
+	cell1.innerHTML = data.id;
+	cell2.innerHTML = data.parent_id;
+	cell3.innerHTML = data.name;
+	cell4.innerHTML = data.slug;
+	cell5.innerHTML = data.thumbnail;
+	cell6.innerHTML = data.viewtype;
+	cell7.innerHTML = data.is_show_homepage;
+	cell8.innerHTML = data.ordering;
+	cell9.innerHTML = data.description;
+	cell10.innerHTML = data.status;
+}
+
+$('#btnUpdatecategories').click(function(){
+	$(this).prop('disabled', true);
+	saveUpdatecategories();
+	$(this).prop('disabled', false);
+});
+
+function saveUpdatecategories(){
+	let data = getDataFormcategories();
+	if(data == false) {
+		$('#btnUpdatecategories').prop('disabled', false);
+		return false;
+	}
+	if(data.idcategoriesHidden == ""){
+		$('#btnUpdatecategories').prop('disabled', false);
+		showNoticeDanger(language.Message_HaveNotSelectedItemUpdate);
+		return false;
+	}
+	var link = $('#linkPrefix').val() + 'updatecategories';
+	$.ajax({
+		type: 'put',
+		url: link,
+		data: data,
+		dataType: "json",
+		success: function(response){
+			var success = response.success;
+			var result 	= response.data;
+			if((success == 'false') || (success == false) ){
+				showNoticeDanger(language.Message_UpdateError);
+				return false;
+			}
+			else if((success != true) && (success != 'true')){
+				showNoticeDanger(result.message);
+				return false;
+			}
+			else {
+				updateRowcategories(result.data);
+				clearFormcategories();
+			}
+		},
+		failure: function (response) {
+			showErrorMessageSave(response, language.Message_UpdateError);
+		},
+		error: function (response) {
+			showErrorMessageSave(response, language.Message_UpdateError);
+		}
+	});
+	$('#btnUpdatecategories').prop('disabled', false);
+}
+
+function updateRowcategories(data){
+	showNoticeSuccess(language.Message_UpdateSuccess);
+	var row = $("#tablecategories button[data-idcategories = '" + data.id + "']").parents("tr")[0];
+	var tr = "<tr>"+
+			"<td class=\"text-center\">" +
+			" <a  onclick=\"getByIdcategories('"+data.id+"')\" type=\"button\" class=\"rounded-circle btn btn-sm btn-info\" title=\"Edit\">" +
+				" <i class=\"fas fa-pencil-alt\"></i>" +
+			" </a>" +
+			" <button type=\"button\" class=\"rounded-circle btn btn-sm btn-danger\" data-idcategories =\""+data.id+"\" title=\"Delete\"  onclick=\"deleteById(this,'"+data.id+"')\">" +
+				" <i class=\"fas fa-trash-alt\"></i> " +
+			" </button> " +
+		" </td>";
+		tr +=  "<td class=\"text-center\">" + data.id + "</td>";
+		tr +=  "<td class=\"text-center\">" + data.parent_id + "</td>";
+		tr +=  "<td class=\"text-center\">" + data.name + "</td>";
+		tr +=  "<td class=\"text-center\">" + data.slug + "</td>";
+		tr +=  "<td class=\"text-center\">" + data.thumbnail + "</td>";
+		tr +=  "<td class=\"text-center\">" + data.viewtype + "</td>";
+		tr +=  "<td class=\"text-center\">" + data.is_show_homepage + "</td>";
+		tr +=  "<td class=\"text-center\">" + data.ordering + "</td>";
+		tr +=  "<td class=\"text-center\">" + data.description + "</td>";
+		tr +=  "<td class=\"text-center\">" + data.status + "</td>";
+	"tr += </tr>";
+	$(row).after(tr);
+	$(row).remove();
+}
+function deleteByIdcategories(row,IdObject){
+	let message =  language.Message_DoYouWantToDeleteById  +' '+ IdObject+'?';
+	var answer = confirm(message)
+	if (!answer){	return false; } 
+	let data = {
+		'id' : IdObject
+	};
+	var link = $('#linkPrefix').val()+'deleteByIdcategories';
+	$.ajax({
+		type	: 'delete',
+		url		: link,
+		data	: data,
+		dataType: "json",
+		success	: function(resultdata){
+			var success = resultdata.success;
+			var message = resultdata.message;
+			var notice 	= {};
+			if((success == 'true') || (success == true)){
+				showNoticeSuccess(language.Message_DeleteSuccess);
+				var i = row.parentNode.parentNode.rowIndex;
+				document.getElementById("tablecategories").deleteRow(i);
+				return true;
+			}
+			else if(message.length > 10){
+				showNoticeDanger(message);
+				return false;
+			}
+			else {
+				showNoticeDanger(language.Message_DeleteFail);
+				return false;
+			}
+		},
+		failure: function (response) {
+			showNoticeDanger(language.Message_DeleteFail);
+		},
+		error: function (response) {
+			showNoticeDanger(language.Message_DeleteFail);
+		}
+	});
+}
+</script>
